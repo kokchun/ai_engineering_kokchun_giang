@@ -1,0 +1,39 @@
+{
+   "objects": [
+      {
+         "address": "Birger Jarlsgatan 12, Lgh 401",
+         "city": "Stockholm",
+         "price_sek": 7500000,
+         "monthly_fee": 3850,
+         "area": 75
+      },
+      {
+         "address": "Linnégatan 34B",
+         "city": "Göteborg",
+         "price_sek": 4250000,
+         "monthly_fee": 3200,
+         "area": 65
+      },
+      {
+         "address": "Davidshallsgatan 8, Vån 2",
+         "city": "Malmö",
+         "price_sek": 3100000,
+         "monthly_fee": 2950,
+         "area": 70
+      },
+      {
+         "address": "Östra Ågatan 22, Lgh 3",
+         "city": "Uppsala",
+         "price_sek": 2800000,
+         "monthly_fee": 3100,
+         "area": 55
+      },
+      {
+         "address": "Storgatan 15B",
+         "city": "Örebro",
+         "price_sek": 2200000,
+         "monthly_fee": 3500,
+         "area": 80
+      }
+   ]
+}
