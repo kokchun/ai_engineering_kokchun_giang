@@ -23,3 +23,11 @@ async def create_book(book_request: Book):
     books.append(new_book)
 
     return new_book
+
+# TODO: 
+# update
+# delete
+# query parameters
+
+
+# @app.put("/books")
