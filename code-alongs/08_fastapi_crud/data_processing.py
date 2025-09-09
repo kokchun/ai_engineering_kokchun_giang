@@ -19,9 +19,14 @@ class Library(BaseModel):
     name: str 
     books: list[Book]
 
+def library_data(filename):
+    """Deserializes library json data into a Library model"""
+    json_data = read_json(filename)
+    return Library.model_validate(json_data)
+
 if __name__ == '__main__':
 
-    data = read_json("library.json")
+    data = library_data("library.json")
 
     pprint(data)
 
