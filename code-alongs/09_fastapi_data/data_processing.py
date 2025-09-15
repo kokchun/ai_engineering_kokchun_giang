@@ -17,7 +17,10 @@ class DataExplorer:
 
     def summary(self):
         self._df = (
-            self._df_full.describe().T.drop(["count"], axis=1).drop(["Day", "Year"])
+            self._df_full.describe()
+            .T.drop(["count"], axis=1)
+            .drop(["Day", "Year"])
+            .reset_index()
         )
         # returning self so that we can chain with other methods using dot operator
         return self

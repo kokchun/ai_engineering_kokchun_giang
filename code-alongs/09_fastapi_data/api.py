@@ -14,7 +14,7 @@ async def read_sales():
 @app.get("/api/summary")
 async def read_summary_data():
     """shows summary statistics"""
-    return ...
+    return data_explorer.summary().json_response()
 
 # to run the API
 # uvicorn api:app --reload
