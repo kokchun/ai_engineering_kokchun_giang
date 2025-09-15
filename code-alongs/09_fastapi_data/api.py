@@ -1,11 +1,15 @@
 from fastapi import FastAPI
+from data_processing import DataExplorer
+
+data_explorer = DataExplorer()
 
 app = FastAPI()
 
 @app.get("/api/sales")
 async def read_sales():
     # implement this code to return json data in this endpoint
-    return ...
+
+    return data_explorer.json_response()
 
 @app.get("/api/summary")
 async def read_summary_data():
