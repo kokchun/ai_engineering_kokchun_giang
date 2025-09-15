@@ -15,6 +15,17 @@ class DataExplorer:
     def df(self):
         return self._df
 
+    def kpis(self, country: str):
+        """Filter out kpis based on country"""
+        df_by_country = self._df_full.query(
+            "Country.str.casefold() == @country.casefold()"
+        )
+        return {
+            "total_profit": str(df_by_country["Profit"].sum()),
+            "total_cost": str(df_by_country["Cost"].sum()),
+            "number_of_purchases": str(len(df_by_country)),
+        }
+
     def summary(self):
         self._df = (
             self._df_full.describe()
