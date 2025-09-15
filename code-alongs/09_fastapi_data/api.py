@@ -11,3 +11,8 @@ async def read_sales():
 async def read_summary_data():
     """shows summary statistics"""
     return ...
+
+# to run the API
+# uvicorn api:app --reload
+
+# navigate to /docs for swagger ui
