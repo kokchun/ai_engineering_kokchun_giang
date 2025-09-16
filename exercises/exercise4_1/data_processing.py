@@ -1,5 +1,5 @@
 from constants import DATA_PATH
-import pandas as pd 
+import pandas as pd
 import json
 
 
@@ -9,11 +9,17 @@ df = pd.read_excel(
 
 
 class MYH:
-    def __init__(self, limit = 100):
-        self.df_full = df 
+    def __init__(self, limit: int = 100):
+        self.df_full = df
         self.df = df.head(limit)
 
+    def filter_school(self, school: str):
+        self.df = self.df_full.query(
+            "`Utbildningsanordnare administrativ enhet` == @school"
+        )
+
+        return self
 
     def to_json(self):
-        data = self.df.to_json(orient = "records")
+        data = self.df.to_json(orient="records")
         return json.loads(data)
