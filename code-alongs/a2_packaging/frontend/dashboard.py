@@ -1,4 +1,3 @@
-from data_processing import cool_data
 
 
 def layout():
