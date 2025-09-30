@@ -1,6 +1,7 @@
 import streamlit as st
 from helpers import read_api_endpoint, post_api_endpoint
 import pandas as pd
+from constants import ASSETS_PATH
 
 iris_data = read_api_endpoint("/api")
 df = pd.DataFrame(iris_data.json())
@@ -42,7 +43,7 @@ def layout():
 
 
         st.markdown(f"Predicted flower: {predicted_flower}")
-
+        st.image(f"{ASSETS_PATH / predicted_flower}.jpg")
 
     print(f"{sepal_length = }")
     print(f"{submitted = }")
