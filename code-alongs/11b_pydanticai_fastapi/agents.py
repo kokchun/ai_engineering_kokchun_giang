@@ -4,7 +4,7 @@ from data_models import Movie
 
 load_dotenv()
 
-agent = Agent(
+movie_agent = Agent(
     model="google-gla:gemini-2.5-flash",
     system_prompt="""You are a movie expert, based
               on a prompt, you should find the closest 
