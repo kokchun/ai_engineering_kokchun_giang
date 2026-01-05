@@ -10,5 +10,7 @@ if __name__ == "__main__":
         );
     """)
 
+    # query_duckdb("INSERT INTO movies VALUES ('Titanic', 1997, 'romance', 5)")
+
     print(query_duckdb("desc table movies;"))
 
