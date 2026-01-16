@@ -30,15 +30,15 @@ def ingest_docs_to_vector_db(table: LanceTable):
             content = file.read()
 
         doc_id = filepath.stem # or some hash/number
-        table.delete(f"doc_id = '{doc_id}") # make idempotent
+        table.delete(f"doc_id = '{doc_id}'") # make idempotent
 
         table.add([{
             "doc_id": doc_id,
-            "filepath": filepath,
+            "filepath": str(filepath),
             "content": content
         }])
 
-        print(table.to_pandas()["filename"])
+        print(table.to_pandas()["doc_id"])
 
         time.sleep(30)
 
