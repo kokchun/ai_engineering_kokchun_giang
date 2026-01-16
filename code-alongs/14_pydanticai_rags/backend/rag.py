@@ -2,6 +2,10 @@ from pydantic_ai import Agent
 from data_models import RagResponse
 from constants import VECTOR_DB_PATH
 import lancedb
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 rag_agent = Agent(
     model="google-gla:gemini-2.5-flash",
