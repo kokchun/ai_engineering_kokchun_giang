@@ -1,5 +1,7 @@
 from pydantic_ai import Agent
 from data_models import RagResponse
+from constants import VECTOR_DB_PATH
+import lancedb
 
 rag_agent = Agent(
     model="google-gla:gemini-2.5-flash",
@@ -22,5 +24,10 @@ def retrieve_top_document(query: str, k=3) -> str:
     """
 
     # logic to connect to knowledge base
+    vector_db = lancedb.connect(uri = VECTOR_DB_PATH)
+
     # retrieve most relevant document
+    results = vector_db["articles"].search(query=query).limit(k).to_list()
+
+
     # pick out relevant info and construct a context for LLM to use
