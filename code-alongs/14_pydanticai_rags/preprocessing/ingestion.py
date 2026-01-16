@@ -1,11 +1,12 @@
 from constants import VECTOR_DB_PATH, DATA_PATH
 import lancedb
 from lancedb.pydantic import LanceModel, Vector
-from pydantic import Field
 from lancedb.embeddings import get_registry
-from pathlib import Path
 from lancedb.table import LanceTable
 import time
+from dotenv import load_dotenv 
+
+load_dotenv()
 
 embedding_model = get_registry().get("gemini-text").create(name="gemini-embedding-001")
 
