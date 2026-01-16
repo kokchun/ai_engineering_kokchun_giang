@@ -5,6 +5,7 @@ from pydantic import Field
 from lancedb.embeddings import get_registry
 from pathlib import Path
 from lancedb.table import LanceTable
+import time
 
 embedding_model = get_registry().get("gemini-text").create(name="gemini-embedding-001")
 
@@ -31,5 +32,15 @@ def ingest_docs_to_vector_db(table: LanceTable):
         table.delete(f"doc_id = '{doc_id}") # make idempotent
 
         table.add([{
-            
+            "doc_id": doc_id,
+            "filepath": filepath,
+            "content": content
         }])
+
+        print(table.to_pandas()["filename"])
+
+        time.sleep(30)
+
+if __name__ == "__main__":
+    vector_db = setup_vector_db(VECTOR_DB_PATH)
+    ingest_docs_to_vector_db(vector_db["articles"])
