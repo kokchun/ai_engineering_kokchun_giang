@@ -12,6 +12,7 @@ dependencies = [
     "lancedb>=0.26.1",
     "pandas>=2.3.3",
     "pydantic-ai>=1.39.0",
+    "pypdf>=6.6.0",
     "python-dotenv>=1.2.1",
     "scikit-learn>=1.8.0",
     "uvicorn>=0.40.0",
